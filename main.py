@@ -94,12 +94,31 @@ class KeywordStatsPlugin(Star):
         return dates
 
     def _get_group_id(self, event: AstrMessageEvent) -> str:
-        return str(getattr(event.message_obj, "group_id", "") or "")
+        try:
+            # Some adapters expose a get_group_id() method.
+            if hasattr(event, "get_group_id") and callable(event.get_group_id):
+                val = event.get_group_id()
+                if val:
+                    return str(val).strip()
+        except Exception:
+            pass
+
+        candidates = [
+            getattr(event, "group_id", None),
+            getattr(event.message_obj, "group_id", None),
+            getattr(event.message_obj, "group", None),
+        ]
+        for val in candidates:
+            if val:
+                return str(val).strip()
+        return ""
 
     def _is_group_whitelisted(self, group_id: str) -> bool:
         whitelist = self.config.get("group_whitelist", []) or []
         if not whitelist:
             return True
+        if not group_id:
+            return False
         return str(group_id) in {str(item) for item in whitelist}
 
     def _get_user_id(self, event: AstrMessageEvent) -> str:
@@ -316,6 +335,11 @@ class KeywordStatsPlugin(Star):
             is_whitelisted_group = self._is_group_whitelisted(group_id)
             if group_id and is_whitelisted_group:
                 self._record_group_message(group_id, user_id, display_name)
+
+            if not group_id:
+                if is_whitelisted_group:
+                    yield event.plain_result("无法获取当前群号，暂不能使用本插件")
+                return
 
             normalized = message_str.replace("/", "").strip()
 

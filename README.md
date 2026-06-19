@@ -5,7 +5,7 @@
 **AstrBot 插件：关键词自动回复 + 群聊消息统计**
 
 ![AstrBot](https://img.shields.io/badge/AstrBot-%3E%3D4.16-blue)
-![Version](https://img.shields.io/badge/version-1.1.5-green)
+![Version](https://img.shields.io/badge/version-1.1.6-green)
 ![License](https://img.shields.io/badge/license-MIT-orange)
 
 </div>
