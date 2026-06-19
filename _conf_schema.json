@@ -1,0 +1,23 @@
+{
+  "match_mode": {
+    "description": "匹配模式",
+    "type": "string",
+    "hint": "contains 表示包含匹配，exact 表示完全匹配。",
+    "default": "contains"
+  },
+  "reply_once_per_message": {
+    "description": "单条消息只回复一次",
+    "type": "bool",
+    "hint": "开启后，一条消息命中多个关键词时只回复一次。",
+    "default": true
+  },
+  "group_whitelist": {
+    "description": "群白名单",
+    "type": "list",
+    "hint": "只有白名单中的群会启用本插件的全部功能；留空表示所有群生效。",
+    "default": [],
+    "items": {
+      "type": "string"
+    }
+  }
+}
