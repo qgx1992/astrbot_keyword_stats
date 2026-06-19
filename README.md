@@ -106,7 +106,7 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/<你的用户名>/astrbot_keyword_stats.git
+git clone https://github.com/qgx1992/astrbot_keyword_stats.git
 
 # 将插件目录复制到 AstrBot 的插件目录
 cp -r astrbot_keyword_stats <AstrBot目录>/addons/
@@ -130,7 +130,7 @@ AstrBot 上传安装时，请使用 **flat** 结构 zip（zip 根目录直接包
 
 ```bash
 # 克隆项目
-git clone https://github.com/<你的用户名>/astrbot_keyword_stats.git
+git clone https://github.com/qgx1992/astrbot_keyword_stats.git
 cd astrbot_keyword_stats
 
 # 代码结构
