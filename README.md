@@ -5,7 +5,7 @@
 **AstrBot 插件：关键词自动回复 + 群聊消息统计**
 
 ![AstrBot](https://img.shields.io/badge/AstrBot-%3E%3D4.16-blue)
-![Version](https://img.shields.io/badge/version-1.1.6-green)
+![Version](https://img.shields.io/badge/version-1.1.8-green)
 ![License](https://img.shields.io/badge/license-MIT-orange)
 
 </div>
@@ -15,6 +15,7 @@
 ## 功能
 
 - 关键词自动回复
+- **支持图文回复**：引用消息添加关键词，可保存文本+图片作为回复
 - 群统计
 - 今日统计
 - 昨日统计
@@ -48,6 +49,7 @@
 
 - `清空统计`
 - `添加关键词 关键词=回复内容`
+- `引用消息后发送：添加关键词 关键词`（支持图文回复）
 - `删除关键词 关键词`
 
 说明：
@@ -67,7 +69,10 @@
 关键词会保存在插件数据目录中的 `keywords.json`，可通过群内命令维护：
 - `关键词列表`
 - `添加关键词 关键词=回复内容`
+- `引用消息后发送：添加关键词 关键词`（支持引用文本+图片消息作为回复）
 - `删除关键词 关键词`
+
+提示：`关键词列表` 中，图文回复会显示为 `[图文消息]` 或 `[图片消息]`，纯文本回复直接显示内容。
 
 ## 插件配置
 

@@ -2,7 +2,7 @@ name: astrbot_keyword_stats
 author: qgx1992
 desc: 提供关键词回复与群聊消息统计功能
 short_desc: 关键词自动回复 + 群统计
-version: 1.1.6
+version: 1.1.8
 display_name: 关键词回复与群统计
 repo: https://github.com/qgx1992/astrbot_keyword_stats
 support_platforms:
